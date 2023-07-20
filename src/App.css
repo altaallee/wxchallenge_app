@@ -1,0 +1,11 @@
+#alertMessage {
+    margin: 8px;
+}
+
+#loadingSpinner {
+    min-width: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
