@@ -11,6 +11,7 @@ class WxchallengeGraphs extends React.Component {
         super(props)
         this.state = {
             modelToggle: {
+                "nbm1h": true,
                 "nbm3h": false,
                 "nbm6h": false,
                 "nbsmos": true,
@@ -197,6 +198,7 @@ class WxchallengeGraphs extends React.Component {
     }
 
     modelParameters = {
+        nbm1h: { label: "NBM-1h", value: "nbm1h", color: "#2ca02c" },
         nbm3h: { label: "NBM-3h", value: "nbm3h", color: "#2ca02c" },
         nbm6h: { label: "NBM-6h", value: "nbm6h", color: "#2ca02c" },
         nbsmos: { label: "NBS MOS", value: "nbsmos", color: "#2ca02c" },
@@ -221,7 +223,7 @@ class WxchallengeGraphs extends React.Component {
     modelVariables = {
         "tmp2m": {
             "models": [
-                "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest", "nam1h",
+                "nbm1h", "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest", "nam1h",
                 "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "gefs", "geps",
                 "hrrr", "rap", "wrfarw", "wrffv3", "metar", "nws"],
             "title": "2-m Temperature",
@@ -229,49 +231,49 @@ class WxchallengeGraphs extends React.Component {
         },
         "dpt2m": {
             "models": [
-                "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest", "nam1h",
-                "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "hrrr", "rap",
-                "wrfarw", "wrffv3", "metar"
+                "nbm1h", "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest",
+                "nam1h", "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "hrrr",
+                "rap", "wrfarw", "wrffv3", "metar"
             ],
             "title": "2-m Dew Point",
             "ylabel": "Temperature [°F]"
         },
         "wind10m": {
             "models": [
-                "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest", "nam1h",
-                "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "gefs", "geps",
-                "hrrr", "rap", "wrfarw", "wrffv3", "metar", "nws"],
+                "nbm1h", "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest",
+                "nam1h", "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "gefs",
+                "geps", "hrrr", "rap", "wrfarw", "wrffv3", "metar", "nws"],
             "title": "10-m Wind and Gust",
             "ylabel": "Speed [kt]"
         },
         "gustsfc": {
             "models": [
-                "nbm3h", "nbm6h", "namnest", "nam1h", "nam3h", "gfs1h", "gfs3h",
-                "hrrr", "rap", "wrfarw", "wrffv3", "metar"],
+                "nbm1h", "nbm3h", "nbm6h", "namnest", "nam1h", "nam3h", "gfs1h",
+                "gfs3h", "hrrr", "rap", "wrfarw", "wrffv3", "metar"],
             "title": "10-m Gust",
             "ylabel": "Speed [kt]"
         },
         "winddir": {
             "models": [
-                "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest", "nam1h",
-                "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "gefs", "geps",
-                "hrrr", "rap", "wrfarw", "wrffv3"],
+                "nbm1h", "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest",
+                "nam1h", "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "gefs",
+                "geps", "hrrr", "rap", "wrfarw", "wrffv3"],
             "title": "10-m Wind Direction",
             "ylabel": "Direction [degree]"
         },
         "tcdcclm": {
             "models": [
-                "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest", "nam1h",
-                "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "gefs", "geps",
-                "hrrr", "rap", "wrfarw", "wrffv3"],
+                "nbm1h", "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest",
+                "nam1h", "nam3h", "nammos", "gfs1h", "gfs3h", "gfsmos", "gefs",
+                "geps", "hrrr", "rap", "wrfarw", "wrffv3"],
             "title": "Total Cloud Cover",
             "ylabel": "Coverage [%]"
         },
         "apcpsfc": {
             "models": [
-                "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest", "nam1h",
-                "nam3h", "gfs1h", "gfs3h", "gefs", "geps", "hrrr", "rap",
-                "wrfarw", "wrffv3"],
+                "nbm1h", "nbm3h", "nbm6h", "nbsmos", "nbemos", "namnest",
+                "nam1h", "nam3h", "gfs1h", "gfs3h", "gefs", "geps", "hrrr",
+                "rap", "wrfarw", "wrffv3"],
             "title": "Total Accumulated Precipitation",
             "ylabel": "Precipitation [in]"
         },
@@ -446,6 +448,7 @@ class WxchallengeGraphs extends React.Component {
 
     render() {
         const models = [
+            { label: "NBM-1h", value: "nbm1h", checked: this.state.modelToggle["nbm1h"] },
             { label: "NBM-3h", value: "nbm3h", checked: this.state.modelToggle["nbm3h"] },
             { label: "NBM-6h", value: "nbm6h", checked: this.state.modelToggle["nbm6h"] },
             { label: "NBS MOS", value: "nbsmos", checked: this.state.modelToggle["nbsmos"] },
